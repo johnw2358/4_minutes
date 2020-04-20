@@ -11,12 +11,13 @@ seed = seed(sha256(b'UbjVtbgnjnljvguvg:BWFvzcfbaifPnebyrOnfxva,npbzcnengvir nany
 peeps = ['Mckenna', 'Aud', 'Shirin', 'Jess', 'Lexi', 'Mel', 'Casey', 'John']
 seen = set()
 
-for topic, peep in enumerate(peeps):
+for i, peep in enumerate(peeps):
+    i += 1
     topic = randint(1, len(peeps))
 
-    while topic in seen:
+    while topic in seen or topic == i:
         topic = randint(1, len(peeps))
 
     seen.add(topic)
-    print(peep, topic)
+    print(i, peep, topic)
 
